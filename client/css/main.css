@@ -35,6 +35,19 @@ body {
 .social-media-icons a {
   color: #fff;
 }
+
 .social-media-icons a:hover {
   color: #fff;
+}
+
+.spicy-text {
+  color: #666;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta > .bold {
+  color: red;
 }
