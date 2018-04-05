@@ -2,8 +2,17 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var consolidate = require('consolidate');
+var path = require('path');
 
 var app = module.exports = loopback();
+
+app.engine('html', consolidate.swig);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/templates');
+app.use(loopback.static(path.resolve(__dirname, '../client')));
+
+require('./routes/landing_routes')(app);
 
 app.start = function() {
   // start the web server
